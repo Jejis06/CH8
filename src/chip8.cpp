@@ -142,10 +142,6 @@ void Chip8::rROM(const char* filename){
 		{
 			mem[OFFSET + i] = buff[i];
 		}
-		for(long i=0;i<S;i++){
-			opc = (mem[OFFSET + i] << 8u) | mem[OFFSET + i+1];
-			std::cout << std::hex << opc << '\n';
-		}
 		delete[] buff;
 	}
 
