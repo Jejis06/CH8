@@ -471,8 +471,8 @@ void Chip8::Cycle(){
 	((*this).*(ITable[(opc & 0xF000u) >> 12u]))();
 
 	if(debug) 
-		std::cout << std::hex \
-			<< "Opcode : " << opc \
+		std::cout << std::hex\
+			<< "Opcode : " << opc\
 			<< " | Identifier : "<< ((opc & 0xF000u) >> 12u)\
 			<< " | Linker : "<< (opc & 0x000Fu)\
 			<< " | Linker(2) : "<<(opc & 0x00FFu)\
