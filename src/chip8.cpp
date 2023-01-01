@@ -469,6 +469,7 @@ void Chip8::Cycle(){
 	pc += 2;
 	
 	((*this).*(ITable[(opc & 0xF000u) >> 12u]))();
+
 	if(debug) 
 		std::cout << std::hex \
 			<< "Opcode : " << opc \
@@ -476,7 +477,11 @@ void Chip8::Cycle(){
 			<< " | Linker : "<< (opc & 0x000Fu)\
 			<< " | Linker(2) : "<<(opc & 0x00FFu)\
 		<<'\n';
-	if(delay > 0) delay--;
-	if (soundTimer > 0) soundTimer--;
+
+	if(delay > 0) 
+		delay--;
+
+	if (soundTimer > 0) 
+		soundTimer--;
 }
 
